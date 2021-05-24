@@ -9,5 +9,4 @@ spec:
     naming_rules:
       - kind: Folder
         patterns:
-          # Matches words like "dev", "prod" or "staging"
           - ^(dev|prod|staging|qa|shared)$
