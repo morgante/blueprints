@@ -4,7 +4,7 @@ metadata:
   name: root-hierarchy
   namespace: hierarchy # kpt-set: ${namespace}
   annotations:
-    config.kubernetes.io/local-config: "true"
+    config.kubernetes.io/local-config: 'true'
 spec:
   config:
     - shared
@@ -12,4 +12,4 @@ spec:
     - prod
     - qa
   parentRef:
-    external: "123456789012" # kpt-set: ${org-id}
+    external: '123456789012' # kpt-set: ${org-id}
