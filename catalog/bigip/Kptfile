@@ -4,3 +4,7 @@ metadata:
   name: bigip
 info:
   description: sample description
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/apply-setters:v0.1
+      configPath: setters.yaml

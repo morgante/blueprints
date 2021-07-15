@@ -1,36 +1,32 @@
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeInstance
 metadata:
+  name: bigip-instance
+  namespace: config-control
+  labels:
+    created-from: image
+    network-type: subnetwork
   annotations:
     cnrm.cloud.google.com/allow-stopping-for-update: "true"
-    cnrm.cloud.google.com/project-id: blueprints-project # kpt-set: ${project-id}
-  name: bigip-instance
-  labels:
-    created-from: "image"
-    network-type: "subnetwork"
+    cnrm.cloud.google.com/project-id: clf-bc-eap2 # kpt-set: ${project-id}
 spec:
-  machineType: n1-standard-4
-  zone: us-west1-a
+  serviceAccount:
+    scopes:
+      - cloud-platform
+    serviceAccountRef:
+      name: bigip-instance
   bootDisk:
     initializeParams:
       #size: 24
       type: pd-ssd
       sourceImageRef:
         external: debian-cloud/debian-9
+  machineType: n1-standard-4
+  metadataStartupScript: |-
+    !/bin/bash
+     echo hello > /config/test-script.txt
+  minCpuPlatform: Intel Skylake
   networkInterface:
     - subnetworkRef:
-        external: default
-  minCpuPlatform: "Intel Skylake"
-  metadataStartupScript: "!/bin/bash\n echo hello > /config/test-script.txt"
-  serviceAccount:
-    serviceAccountRef:
-      name: bigip
-    scopes:
-    - cloud-platform
----
-apiVersion: iam.cnrm.cloud.google.com/v1beta1
-kind: IAMServiceAccount
-metadata:
-  name: bigip
-  annotations:
-    cnrm.cloud.google.com/project-id: blueprints-project # kpt-set: ${project-id}
+        external: projects/clf-bc-eap2/regions/us-west1/subnetworks/defalt
+  zone: us-west1-a
