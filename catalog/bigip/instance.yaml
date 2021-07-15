@@ -28,5 +28,5 @@ spec:
   minCpuPlatform: Intel Skylake
   networkInterface:
     - subnetworkRef:
-        external: projects/clf-bc-eap2/regions/us-west1/subnetworks/defalt
+        external: projects/clf-bc-eap2/regions/us-west1/subnetworks/default
   zone: us-west1-a
