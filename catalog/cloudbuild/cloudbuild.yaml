@@ -9,3 +9,11 @@ steps:
   - '--tag=gcr.io/$PROJECT_ID/go:alpine'
   - '--tag=gcr.io/$PROJECT_ID/go:alpine-1.16'
   - '.'
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-f'
+  - 'Dockerfile.debian'
+  - '--tag=gcr.io/$PROJECT_ID/go:debian'
+  - '--tag=gcr.io/$PROJECT_ID/go:debian-1.15'
+  - '.'
