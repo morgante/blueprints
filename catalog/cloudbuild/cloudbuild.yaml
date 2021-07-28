@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-f'
+  - 'Dockerfile.alpine'
+  - '--tag=gcr.io/$PROJECT_ID/go'
+  - '--tag=gcr.io/$PROJECT_ID/go:1.15'
+  - '--tag=gcr.io/$PROJECT_ID/go:alpine'
+  - '--tag=gcr.io/$PROJECT_ID/go:alpine-1.15'
+  - '.'
