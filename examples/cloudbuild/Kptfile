@@ -15,6 +15,6 @@ upstreamLock:
     repo: https://github.com/morgante/blueprints
     directory: /catalog/cloudbuild
     ref: demo/cloudbuild
-    commit: 2be4346763dc98c479110673bfed3e6a72c27dc9
+    commit: d98c0b04632273558dbb32b3f2505b50e6c9fa8e
 info:
   description: This package contains a sample Cloud Build configuration.
