@@ -19,4 +19,5 @@ metadata: # kpt-merge: /setters
 data:
   name: bucket2
   namespace: config-control
+  project-id: $DEFAULT_PROJECT
   storage-class: standard
