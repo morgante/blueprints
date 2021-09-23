@@ -24,4 +24,4 @@ spec:
   storageClass: standard # {"$kpt-set":"storage-class"}
   uniformBucketLevelAccess: true
   versioning:
-    enabled: false
+    enabled: true

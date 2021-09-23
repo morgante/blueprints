@@ -17,7 +17,7 @@ kind: ConfigMap
 metadata: # kpt-merge: /setters
   name: setters
 data:
-  name: bucket2
+  name: bucket-red-99
   namespace: config-control
   project-id: $DEFAULT_PROJECT
   storage-class: standard
