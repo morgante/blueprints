@@ -17,7 +17,7 @@ kind: ConfigMap
 metadata: # kpt-merge: /setters
   name: setters
 data:
-  name: badly-bad-bucket
+  name: orange-bucket
   namespace: config-control
   project-id: $DEFAULT_PROJECT
   storage-class: standard
